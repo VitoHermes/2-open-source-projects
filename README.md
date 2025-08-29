@@ -1,2 +1,3 @@
 
-password generator: [https://2-open-source-projects.vercel.app/](https://password-generator-chris.vercel.app/)
+password generator: https://password-generator-chris.vercel.app/
+todo list: https://todolist-chris.vercel.app/

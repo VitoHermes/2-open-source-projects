@@ -1,74 +1,75 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>待办事项管理系统</title>
+    <title>Todo Management System</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>📝 待办事项管理系统</h1>
-            <p>使用Promise模拟API请求，支持搜索、过滤和分页</p>
+            <h1>📝 Todo Management System</h1>
+            <p>Using Promise to simulate API requests, supporting search, filtering and pagination</p>
         </header>
 
-        <!-- 搜索和过滤区域 -->
+        <!-- Search and Filter Section -->
         <section class="search-section">
-            <h2>搜索和过滤</h2>
+            <h2>Search and Filter</h2>
             <div class="search-form">
                 <div class="search-row">
                     <div class="form-group">
-                        <label for="searchInput">关键词搜索</label>
-                        <input type="text" id="searchInput" placeholder="搜索标题、描述或优先级...">
+                        <label for="searchInput">Keyword Search</label>
+                        <input type="text" id="searchInput" placeholder="Search by title, description or priority...">
                     </div>
                     <div class="form-group">
-                        <label for="statusFilter">完成状态</label>
+                        <label for="statusFilter">Completion Status</label>
                         <select id="statusFilter">
-                            <option value="all">全部状态</option>
-                            <option value="completed">已完成</option>
-                            <option value="pending">未完成</option>
+                            <option value="all">All Status</option>
+                            <option value="completed">Completed</option>
+                            <option value="pending">Pending</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="priorityFilter">优先级</label>
+                        <label for="priorityFilter">Priority</label>
                         <select id="priorityFilter">
-                            <option value="all">全部优先级</option>
-                            <option value="high">高</option>
-                            <option value="medium">中</option>
-                            <option value="low">低</option>
+                            <option value="all">All Priorities</option>
+                            <option value="high">High</option>
+                            <option value="medium">Medium</option>
+                            <option value="low">Low</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="limitSelect">每页显示</label>
+                        <label for="limitSelect">Items Per Page</label>
                         <select id="limitSelect" onchange="changeLimit(this.value)">
-                            <option value="5">5条</option>
-                            <option value="10" selected>10条</option>
-                            <option value="15">15条</option>
-                            <option value="20">20条</option>
+                            <option value="5">5 items</option>
+                            <option value="10" selected>10 items</option>
+                            <option value="15">15 items</option>
+                            <option value="20">20 items</option>
                         </select>
                     </div>
                 </div>
                 <div class="search-actions">
-                    <button onclick="searchTodos()" class="btn btn-primary">搜索</button>
-                    <button onclick="clearSearch()" class="btn btn-secondary">清除</button>
+                    <button onclick="searchTodos()" class="btn btn-primary">Search</button>
+                    <button onclick="clearSearch()" class="btn btn-secondary">Clear</button>
                 </div>
             </div>
         </section>
 
-        <!-- 待办事项列表 -->
+        <!-- Todo List Section -->
         <section class="todos-section">
-            <h2>待办事项列表 (共20条，第1页，每页10条)</h2>
+            <h2>Todo List (Total: 20 items, Page 1, 10 items per page)</h2>
             <div class="todos-container">
-                <!-- 待办事项将通过JavaScript动态渲染 -->
+                <!-- Todos will be dynamically rendered by JavaScript -->
             </div>
-            <!-- 分页控件 -->
+            <!-- Pagination Controls -->
             <div class="pagination">
-                <!-- 分页将通过JavaScript动态渲染 -->
+                <!-- Pagination will be dynamically rendered by JavaScript -->
             </div>
         </section>
     </div>
 
-    <script src="index.js"></script>
+    <script type="module" src="mock-data.js"></script>
+    <script type="module" src="index.js"></script>
 </body>
 </html>

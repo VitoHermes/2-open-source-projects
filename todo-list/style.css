@@ -1,4 +1,4 @@
-/* 全局样式 */
+/* Global Styles */
 * {
     margin: 0;
     padding: 0;
@@ -19,7 +19,7 @@ body {
     padding: 20px;
 }
 
-/* 头部样式 */
+/* Header Styles */
 header {
     text-align: center;
     margin-bottom: 40px;
@@ -37,7 +37,7 @@ header p {
     opacity: 0.9;
 }
 
-/* 搜索区域样式 */
+/* Search Section Styles */
 .search-section {
     background: white;
     border-radius: 15px;
@@ -96,7 +96,7 @@ header p {
     border-color: #667eea;
 }
 
-/* 按钮样式 */
+/* Button Styles */
 .btn {
     padding: 12px 24px;
     border: none;
@@ -139,7 +139,7 @@ header p {
     transform: translateY(-1px);
 }
 
-/* 待办事项列表样式 */
+/* Todo List Styles */
 .todos-section {
     background: white;
     border-radius: 15px;
@@ -214,7 +214,7 @@ header p {
     gap: 10px;
 }
 
-/* 无结果提示 */
+/* No Results Message */
 .no-results {
     text-align: center;
     padding: 40px;
@@ -226,7 +226,7 @@ header p {
     font-size: 1.1rem;
 }
 
-/* 分页样式 */
+/* Pagination Styles */
 .pagination {
     margin-top: 30px;
     display: flex;
@@ -266,7 +266,7 @@ header p {
     font-weight: 600;
 }
 
-/* 消息提示样式 */
+/* Message Notification Styles */
 .message {
     position: fixed;
     top: 20px;
@@ -302,7 +302,7 @@ header p {
     }
 }
 
-/* 响应式设计 */
+/* Responsive Design */
 @media (max-width: 768px) {
     .container {
         padding: 15px;

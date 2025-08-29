@@ -4,10 +4,15 @@ export function Card(props: HTMLAttributes<HTMLDivElement>) {
   const { className = "", ...rest } = props;
   return (
     <div
-      className={
-        "rounded-lg border border-black/5 dark:border-white/10 bg-white/60 dark:bg-black/30 backdrop-blur-sm transition-transform duration-200 ease-out " +
-        className
-      }
+      className={`card-enhanced ${className}`}
+      style={{
+        // Enable hardware acceleration
+        transform: 'translateZ(0)',
+        backfaceVisibility: 'hidden',
+        perspective: '1000px',
+        // Optimize for performance
+        willChange: 'transform',
+      }}
       {...rest}
     />
   );
@@ -16,7 +21,7 @@ export function Card(props: HTMLAttributes<HTMLDivElement>) {
 export function RingGradient(props: HTMLAttributes<HTMLDivElement> & { children: React.ReactNode }) {
   const { className = "", children, ...rest } = props;
   return (
-    <div className={"relative " + className} {...rest}>
+    <div className={`relative ${className}`} {...rest}>
       <div
         aria-hidden
         className="pointer-events-none absolute -inset-px rounded-[inherit]"
@@ -27,7 +32,7 @@ export function RingGradient(props: HTMLAttributes<HTMLDivElement> & { children:
           WebkitMaskComposite: "xor",
           maskComposite: "exclude",
           background:
-            "linear-gradient(135deg, rgba(var(--accent),0.5), rgba(255,255,255,0))",
+            "linear-gradient(135deg, rgba(var(--primary-500),0.3), rgba(var(--accent-teal),0.2))",
         }}
       />
       {children}
@@ -39,11 +44,7 @@ export function ButtonPrimary(props: HTMLAttributes<HTMLAnchorElement> & { href:
   const { className = "", ...rest } = props;
   return (
     <a
-      className={
-        "inline-flex items-center rounded px-4 py-2 text-sm text-white " +
-        "bg-[rgb(var(--accent))] hover:opacity-90 shadow-sm " +
-        className
-      }
+      className={`inline-flex items-center rounded-lg px-6 py-3 text-sm font-medium text-white bg-gradient-to-r from-[rgb(var(--primary-600))] to-[rgb(var(--primary-500))] hover:from-[rgb(var(--primary-700))] hover:to-[rgb(var(--primary-600))] shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 ${className}`}
       {...rest}
     />
   );
@@ -53,10 +54,7 @@ export function ButtonOutline(props: HTMLAttributes<HTMLAnchorElement> & { href:
   const { className = "", ...rest } = props;
   return (
     <a
-      className={
-        "inline-flex items-center rounded px-4 py-2 text-sm border border-black/10 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/10 " +
-        className
-      }
+      className={`inline-flex items-center rounded-lg px-6 py-3 text-sm font-medium border-2 border-[rgb(var(--primary-300))] text-[rgb(var(--primary-600))] hover:bg-[rgb(var(--primary-50))] hover:border-[rgb(var(--primary-400))] transition-all duration-300 transform hover:-translate-y-0.5 ${className}`}
       {...rest}
     />
   );

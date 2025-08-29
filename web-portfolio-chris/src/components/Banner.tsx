@@ -6,13 +6,13 @@ export default function Banner() {
     <section id="home" className="pt-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-          <div>
-            <p className="uppercase text-xs tracking-widest text-gray-500">Senior Software Developer</p>
-            <h1 className="text-3xl sm:text-5xl font-bold tracking-tight text-gradient">Chris Zhang</h1>
+          <div className="flex flex-col">
+            <h1 className="text-3xl sm:text-5xl font-bold tracking-tight text-gradient pt-5">Chris Zhang</h1>
+            <p className="uppercase text-xs tracking-widest text-gray-500 dark:text-gray-400 pb-3">Senior Software Engineer</p>
             <p className="text-base sm:text-lg mt-5 sm:mt-6 text-gray-600 dark:text-gray-300">
               Frontend engineer specializing in React/TypeScript. Web3 payments, AI-assisted UX, and large-scale e-commerce platform experience.
             </p>
-            <div className="flex gap-3 mt-6">
+            <div className="flex gap-3 pt-10">
               <ButtonPrimary href="#work">View Work</ButtonPrimary>
               <ButtonOutline href="#contact">Contact</ButtonOutline>
             </div>

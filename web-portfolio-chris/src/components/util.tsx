@@ -13,8 +13,8 @@ export function Card(props: HTMLAttributes<HTMLDivElement>) {
   );
 }
 
-export function RingGradient(props: HTMLAttributes<HTMLDivElement>) {
-  const { className = "", children, ...rest } = props as any;
+export function RingGradient(props: HTMLAttributes<HTMLDivElement> & { children: React.ReactNode }) {
+  const { className = "", children, ...rest } = props;
   return (
     <div className={"relative " + className} {...rest}>
       <div
@@ -36,29 +36,28 @@ export function RingGradient(props: HTMLAttributes<HTMLDivElement>) {
 }
 
 export function ButtonPrimary(props: HTMLAttributes<HTMLAnchorElement> & { href: string }) {
-  const { className = "", ...rest } = props as any;
+  const { className = "", ...rest } = props;
   return (
     <a
       className={
         "inline-flex items-center rounded px-4 py-2 text-sm text-white " +
-        "" +
         "bg-[rgb(var(--accent))] hover:opacity-90 shadow-sm " +
         className
       }
-      {...(rest as any)}
+      {...rest}
     />
   );
 }
 
 export function ButtonOutline(props: HTMLAttributes<HTMLAnchorElement> & { href: string }) {
-  const { className = "", ...rest } = props as any;
+  const { className = "", ...rest } = props;
   return (
     <a
       className={
         "inline-flex items-center rounded px-4 py-2 text-sm border border-black/10 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/10 " +
         className
       }
-      {...(rest as any)}
+      {...rest}
     />
   );
 }

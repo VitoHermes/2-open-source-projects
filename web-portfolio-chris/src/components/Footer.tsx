@@ -9,7 +9,7 @@ export default function Footer() {
           <div className="flex items-center gap-4 text-sm">
             <a href="mailto:vito186cm@gmail.com" className="hover:underline">Email</a>
             <a href="https://www.linkedin.com/in/chrisdavis2025/" target="_blank" rel="noreferrer" className="hover:underline">LinkedIn</a>
-            <a href="https://github.com/" target="_blank" rel="noreferrer" className="hover:underline">Github</a>
+            <a href="https://github.com/vitoHermes/" target="_blank" rel="noreferrer" className="hover:underline">Github</a>
           </div>
         </div>
       </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Header() {
 
@@ -9,7 +10,7 @@ export default function Header() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="h-16 flex items-center justify-between">
           <Link href="#home" className="font-semibold tracking-tight">
-            Chris Zhang
+            <Image src="/name-logo.png" alt="Hero" width={100} height={100} className="rounded-full" />
           </Link>
           <nav className="flex items-center gap-6 text-sm">
             <a href="#expertise" className="hover:opacity-80">My Expertise</a>

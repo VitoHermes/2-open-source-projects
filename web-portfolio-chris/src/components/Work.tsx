@@ -16,19 +16,24 @@ const works: WorkItem[] = [
 
 export default function Work() {
   return (
-    <section id="work" className="py-8 sm:py-12">
+    <section id="work" className="py-8 sm:py-12 bg-gray-900">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="flex items-end justify-between gap-4">
-          <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight">My Work</h2>
-        </div>
+          <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-white text-center pb-12">
+            My Work
+          </h2>
 
-        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {works.map((w) => (
-            <Card key={w.id} className="p-5">
-              <div className="text-xs uppercase tracking-widest text-gray-500">{w.tag}</div>
-              <div className="mt-2 font-medium">{w.title}</div>
-              <button className="mt-3 text-sm text-[rgb(var(--accent))] hover:underline underline-offset-4">Show project</button>
-            </Card>
+            <div 
+              key={w.id} 
+              className="bg-gray-800 rounded-lg p-5 border border-gray-700 hover:border-purple-500/50 transition-all duration-300 ease-out transform hover:shadow-lg hover:shadow-purple-500/20"
+            >
+              <div className="text-xs uppercase tracking-widest text-purple-400 font-semibold">{w.tag}</div>
+              <div className="mt-2 font-medium text-white text-base">{w.title}</div>
+              <button className="mt-3 text-sm text-purple-400 hover:text-purple-300 transition-colors duration-300 font-medium hover:underline underline-offset-4">
+                Show project
+              </button>
+            </div>
           ))}
         </div>
       </div>

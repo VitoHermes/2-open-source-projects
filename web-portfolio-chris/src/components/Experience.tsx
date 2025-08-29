@@ -86,8 +86,19 @@ export default function Experience() {
     setExpandedId(expandedId === id ? null : id);
   };
 
+  // 计算动态高度
+  const getSectionHeight = () => {
+    if (expandedId) {
+      return "min-h-screen"; // 有展开项时保持全屏高度
+    }
+    return "min-h-[600px]"; // 折叠状态时缩短高度
+  };
+
   return (
-    <section id="experience" className="py-8 sm:py-12 bg-gray-900 min-h-screen">
+    <section 
+      id="experience" 
+      className={`py-8 sm:py-12 bg-gray-900 transition-all duration-700 ease-in-out ${getSectionHeight()}`}
+    >
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-white text-center pb-12">
           Professional Experience

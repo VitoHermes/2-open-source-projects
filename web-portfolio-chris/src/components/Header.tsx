@@ -13,8 +13,8 @@ export default function Header() {
             <Image src="/name-logo.png" alt="Hero" width={100} height={100} className="rounded-full" />
           </Link>
           <nav className="flex items-center gap-6 text-sm">
-            <a href="#expertise" className="hover:opacity-80">My Expertise</a>
-            <a href="#work" className="hover:opacity-80">My Work</a>
+            <a href="#expertise" className="hover:opacity-80">Expertise</a>
+            <a href="#work" className="hover:opacity-80">Work</a>
             <a href="#experience" className="hover:opacity-80">Experience</a>
             <a href="#contact" className="hover:opacity-80">Contact</a>
           </nav>

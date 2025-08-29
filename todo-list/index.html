@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>待办事项管理系统</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📝 待办事项管理系统</h1>
+            <p>使用Promise模拟API请求，支持搜索、过滤和分页</p>
+        </header>
+
+        <!-- 搜索和过滤区域 -->
+        <section class="search-section">
+            <h2>搜索和过滤</h2>
+            <div class="search-form">
+                <div class="search-row">
+                    <div class="form-group">
+                        <label for="searchInput">关键词搜索</label>
+                        <input type="text" id="searchInput" placeholder="搜索标题、描述或优先级...">
+                    </div>
+                    <div class="form-group">
+                        <label for="statusFilter">完成状态</label>
+                        <select id="statusFilter">
+                            <option value="all">全部状态</option>
+                            <option value="completed">已完成</option>
+                            <option value="pending">未完成</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="priorityFilter">优先级</label>
+                        <select id="priorityFilter">
+                            <option value="all">全部优先级</option>
+                            <option value="high">高</option>
+                            <option value="medium">中</option>
+                            <option value="low">低</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="limitSelect">每页显示</label>
+                        <select id="limitSelect" onchange="changeLimit(this.value)">
+                            <option value="5">5条</option>
+                            <option value="10" selected>10条</option>
+                            <option value="15">15条</option>
+                            <option value="20">20条</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="search-actions">
+                    <button onclick="searchTodos()" class="btn btn-primary">搜索</button>
+                    <button onclick="clearSearch()" class="btn btn-secondary">清除</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 待办事项列表 -->
+        <section class="todos-section">
+            <h2>待办事项列表 (共20条，第1页，每页10条)</h2>
+            <div class="todos-container">
+                <!-- 待办事项将通过JavaScript动态渲染 -->
+            </div>
+            <!-- 分页控件 -->
+            <div class="pagination">
+                <!-- 分页将通过JavaScript动态渲染 -->
+            </div>
+        </section>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>

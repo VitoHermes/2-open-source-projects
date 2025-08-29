@@ -1,0 +1,313 @@
+/* 游戏容器 */
+.game {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* 游戏棋盘容器 */
+.game-board {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* 游戏状态显示 */
+.status {
+  margin-bottom: 25px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  padding: 15px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* 棋盘行 */
+.board-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.board-row:last-child {
+  margin-bottom: 0;
+}
+
+/* 棋盘格子 */
+.square {
+  width: 90px;
+  height: 90px;
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
+  border: none;
+  border-radius: 15px;
+  font-size: 42px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow:
+    0 8px 16px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  position: relative;
+  overflow: hidden;
+}
+
+/* X 和 O 的样式 */
+.square:not(:empty) {
+  background: linear-gradient(145deg, #667eea, #764ba2);
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+}
+
+/* 悬停效果 */
+.square:hover:empty {
+  background: linear-gradient(145deg, #f0f0f0, #e0e0e0);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow:
+    0 12px 24px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+/* 点击效果 */
+.square:active {
+  transform: translateY(-1px) scale(0.98);
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+/* 焦点样式 */
+.square:focus {
+  outline: none;
+  box-shadow:
+    0 0 0 3px rgba(102, 126, 234, 0.5),
+    0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* 游戏信息面板 */
+.game-info {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  min-width: 250px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+/* 历史记录列表 */
+.game-info ol {
+  padding-left: 25px;
+  margin: 0;
+  list-style: none;
+  counter-reset: move-counter;
+}
+
+.game-info li {
+  margin-bottom: 12px;
+  counter-increment: move-counter;
+  position: relative;
+}
+
+.game-info li::before {
+  content: counter(move-counter);
+  position: absolute;
+  left: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* 历史记录按钮 */
+.game-info button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  width: 100%;
+  text-align: left;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+/* 按钮悬停效果 */
+.game-info button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+}
+
+/* 按钮点击效果 */
+.game-info button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* 按钮焦点样式 */
+.game-info button:focus {
+  outline: none;
+  box-shadow:
+    0 0 0 3px rgba(102, 126, 234, 0.3),
+    0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* 胜利动画 */
+@keyframes winner {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.square.winner {
+  animation: winner 0.6s ease-in-out;
+  background: linear-gradient(145deg, #4CAF50, #45a049);
+  color: white;
+  box-shadow: 0 0 20px rgba(76, 175, 80, 0.5);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .game {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 15px;
+  }
+
+  .game-board {
+    padding: 20px;
+  }
+
+  .square {
+    width: 70px;
+    height: 70px;
+    font-size: 32px;
+  }
+
+  .status {
+    font-size: 22px;
+    padding: 12px;
+  }
+
+  .game-info {
+    min-width: 200px;
+    padding: 20px;
+  }
+
+  .game-info button {
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .square {
+    width: 60px;
+    height: 60px;
+    font-size: 28px;
+  }
+
+  .status {
+    font-size: 20px;
+  }
+
+  .game-info {
+    min-width: 180px;
+  }
+}
+
+/* 滚动条样式 */
+.game-info::-webkit-scrollbar {
+  width: 6px;
+}
+
+.game-info::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+}
+
+.game-info::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 3px;
+}
+
+.game-info::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+}
+
+/* 加载动画 */
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.7; }
+  100% { opacity: 1; }
+}
+
+.square.loading {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* 游戏结束状态 */
+.game-over .square {
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+.game-over .square:hover {
+  transform: none;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* 主题切换支持 */
+@media (prefers-color-scheme: dark) {
+  .game {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  }
+
+  .game-board,
+  .game-info {
+    background: rgba(44, 62, 80, 0.95);
+    color: #ecf0f1;
+  }
+
+  .square {
+    background: linear-gradient(145deg, #34495e, #2c3e50);
+    color: #ecf0f1;
+  }
+
+  .square:hover:empty {
+    background: linear-gradient(145deg, #3a5a78, #2c3e50);
+  }
+}

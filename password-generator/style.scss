@@ -1,0 +1,113 @@
+$primary-color: #44489f;
+$secondary-color: #242b66;
+$tertiary-color: #fff;
+$quaternary-color: #000;
+$alert-color: #03ef85;
+$alert-text-color: #ffffff;
+
+body {
+  background-color: $primary-color;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: $tertiary-color;
+}
+
+.alert {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -20px);
+  margin: 0 auto;
+  width: 80%;
+  text-align: center;
+  color: $alert-text-color;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: $alert-color;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+
+  &.is-visible {
+    transform: translate(-50%, 12px);
+    opacity: 1;
+    visibility: visible;
+  }
+}
+.container {
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 400px;
+  margin: 10px auto;
+  padding: 20px;
+  background-color: $secondary-color;
+
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .password-container {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    margin: 20px auto;
+
+    .password-output {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      margin: 10px 0;
+    }
+  }
+
+  .settings {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+
+    .input-container {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      width: 100%;
+      justify-content: space-between;
+
+      label {
+        margin-right: 10px;
+      }
+    }
+
+    #length {
+      color: $quaternary-color;
+    }
+  }
+
+  #generate {
+    width: 100%;
+    background-color: $primary-color;
+    color: $tertiary-color;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+}

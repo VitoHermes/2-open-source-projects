@@ -2,15 +2,16 @@ type WorkItem = {
   id: string;
   title: string;
   tag: string;
+  url: string;
 };
 
 const works: WorkItem[] = [
-  { id: "work-paypai", title: "PayPAI — Cross-border Web3 Payments & AI Agent", tag: "Web3 / FinTech" },
-  { id: "work-invoice-tokenization", title: "Tokenized Invoice Platform — Receivables & Investment", tag: "Web3 / Dapp" },
-  { id: "work-douyin-platform", title: "Douyin E-commerce Service Platform", tag: "E-commerce" },
-  { id: "work-feishu-open", title: "Feishu (Lark) Open Platform — Distribution & Billing", tag: "SaaS Platform" },
-  { id: "work-zhengcaiyun", title: "Zhengcaiyun — ISV Onboarding Workflow", tag: "Open Platform" },
-  { id: "work-jindou-cloud", title: "Jindou Cloud SaaS — Automotive Service Centers", tag: "SaaS" },
+  { id: "work-paypai", title: "PayPAI — Cross-border Web3 Payments & AI Agent", tag: "Web3 / FinTech", url: "https://paypai.network/" },
+  { id: "work-invoice-tokenization", title: "Tokenized Invoice Platform — Receivables & Investment", tag: "Web3 / Dapp", url: "https://ubt.amplefintech.com/" },
+  { id: "work-douyin-platform", title: "Douyin E-commerce Service Platform", tag: "E-commerce", url: "https://fxg.jinritemai.com/" },
+  { id: "work-feishu-open", title: "Feishu (Lark) Open Platform — Distribution & Billing", tag: "SaaS Platform", url: "https://app.feishu.cn/" },
+  { id: "work-zhengcaiyun", title: "Zhengcaiyun — ISV Onboarding Workflow", tag: "Open Platform", url: "https://m.zcygov.cn/" },
+  { id: "work-jindou-cloud", title: "Jindou Cloud SaaS — Automotive Service Centers", tag: "SaaS", url: "https://www.mys4s.cn/" },
 ];
 
 export default function Work() {
@@ -25,13 +26,15 @@ export default function Work() {
           {works.map((w) => (
             <div 
               key={w.id} 
-              className="bg-gray-800 rounded-lg p-5 border border-gray-700 hover:border-purple-500/50 transition-all duration-300 ease-out transform hover:shadow-lg hover:shadow-purple-500/20"
+              className="relative bg-gray-800 rounded-lg p-5 border border-gray-700 hover:border-purple-500/50 transition-all duration-300 ease-out transform hover:shadow-lg hover:shadow-purple-500/20"
             >
               <div className="text-xs uppercase tracking-widest text-purple-400 font-semibold">{w.tag}</div>
               <div className="mt-2 font-medium text-white text-base">{w.title}</div>
-              <button className="mt-3 text-sm text-purple-400 hover:text-purple-300 transition-colors duration-300 font-medium hover:underline underline-offset-4">
-                Show project
-              </button>
+              <div className="absolute top-3 right-2">
+                <a href={w.url} target="_blank" rel="noreferrer" className="mt-3 text-sm text-purple-400 hover:text-purple-300 transition-colors duration-300 font-medium hover:underline underline-offset-4">
+                  Details
+                </a>
+              </div>
             </div>
           ))}
         </div>

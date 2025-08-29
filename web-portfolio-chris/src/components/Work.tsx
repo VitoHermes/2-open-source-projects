@@ -1,4 +1,3 @@
-import { Card } from "@/components/util";
 type WorkItem = {
   id: string;
   title: string;
@@ -18,9 +17,9 @@ export default function Work() {
   return (
     <section id="work" className="py-8 sm:py-12 bg-gray-900">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-white text-center pb-12">
-            My Work
-          </h2>
+        <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-white text-center pb-12">
+          My Work
+        </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {works.map((w) => (

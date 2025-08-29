@@ -1,4 +1,3 @@
-import { Card } from "@/components/util";
 export default function Expertise() {
   const items = [
     {

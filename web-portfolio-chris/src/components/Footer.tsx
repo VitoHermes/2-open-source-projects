@@ -6,7 +6,7 @@ export default function Footer() {
         <div className="text-center mb-12">
           <h3 className="text-2xl font-semibold text-white mb-6">Get In Touch</h3>
           <p className="text-gray-300 mb-8 max-w-md mx-auto">
-            I'm always open to discussing new opportunities, interesting projects, and creative ideas.
+            I&apos;m always open to discussing new opportunities, interesting projects, and creative ideas.
           </p>
         </div>
 

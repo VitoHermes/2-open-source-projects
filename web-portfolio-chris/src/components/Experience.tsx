@@ -71,9 +71,9 @@ const experiences: ExperienceItem[] = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-16 sm:py-24">
+    <section id="experience" className="py-8 sm:py-12">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">Professional Experience</h2>
+        <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight">Professional Experience</h2>
         <div className="mt-8 space-y-6">
           {experiences.map((exp) => (
             <Card key={exp.id} className="p-6">

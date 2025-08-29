@@ -24,9 +24,9 @@ export default function Expertise() {
   ];
 
   return (
-    <section id="expertise" className="py-16 sm:py-24">
+    <section id="expertise" className="py-8 sm:py-12">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">My Expertise</h2>
+        <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight">My Expertise</h2>
         <div className="mt-8 grid grid-cols-1 md:grid-cols-4 gap-6">
           {items.map((item) => (
             <Card key={item.id} className="p-6">

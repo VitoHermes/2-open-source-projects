@@ -16,11 +16,10 @@ const works: WorkItem[] = [
 
 export default function Work() {
   return (
-    <section id="work" className="py-16 sm:py-24">
+    <section id="work" className="py-8 sm:py-12">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="flex items-end justify-between gap-4">
-          <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">My Work</h2>
-          <div className="text-sm text-gray-600 dark:text-gray-300">Filter: All</div>
+          <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight">My Work</h2>
         </div>
 
         <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

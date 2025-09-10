@@ -24,10 +24,4 @@ export const expertiseData: ExpertiseItem[] = [
     desc: "OpenAI API, LangChain, Prompt Engineering, RAG Systems, AI Agents, Vector Databases, Machine Learning Models, Data Processing, API Integration.",
     icon: "🤖",
   },
-  {
-    id: "expertise-backend",
-    title: "Backend & DevOps",
-    desc: "Node.js, Express.js, RESTful APIs, GraphQL, Database Design, CI/CD Pipelines, Docker, Kubernetes, AWS Services, Microservices Architecture.",
-    icon: "☁️",
-  },
 ];

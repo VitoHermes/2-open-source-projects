@@ -7,7 +7,7 @@ export default function Expertise() {
         <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-white text-center pb-12">
           Technical Expertise
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {expertiseData.map((item) => (
             <div 
               key={item.id} 
